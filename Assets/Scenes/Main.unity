@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 22826201}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -189,10 +189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46555b9b81089174c85b5ff6448176ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 10
   _jumpForce: 8
+  _jump: 8
   _playerTransform: {fileID: 22826205}
   _coinPrefab: {fileID: 0}
+  _collider: {fileID: 22826201}
+  _rigidbody: {fileID: 22826203}
 --- !u!50 &22826203
 Rigidbody2D:
   serializedVersion: 4
@@ -391,7 +394,7 @@ GameObject:
   - component: {fileID: 1321323020}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -439,7 +442,7 @@ GameObject:
   - component: {fileID: 1473135559}
   m_Layer: 0
   m_Name: Coin
-  m_TagString: Untagged
+  m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _rigidbody = GetComponent<Rigidbody2D>; 
+        _rigidbody = GetComponent<Rigidbody2D>(); 
     }
 
     private void Update()
@@ -28,7 +28,17 @@ public class Player : MonoBehaviour
                 _jump
             );
         }
+
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    { 
+        if (collision.gameobject.CompareTag("Ground"))
+        {
+            _isGrounded = true;
+        }
+    }
+
+
 
     
 }
