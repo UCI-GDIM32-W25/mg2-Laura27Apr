@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
 
     private bool _isGrounded = true;
 
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody2D>; 
+    }
 
     private void Update()
     {
