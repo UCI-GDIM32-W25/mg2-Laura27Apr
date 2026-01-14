@@ -2,7 +2,8 @@
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1.0f;
+    [SerializeField] private float _speed = 5.0f;
+    [SerializeField] private float _jumpForce = 8.0f;
     [SerializeField] private Transform _playerTransform;
     [SerializeField] private GameObject _coinPrefab;
 
@@ -10,7 +11,11 @@ public class Player : MonoBehaviour
     {
         _playerTransform = transform;
 
-        
     }
 
+    private void Update()
+    {
+        
+
+    }
 }
