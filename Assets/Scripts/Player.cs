@@ -2,11 +2,7 @@
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5.0f;
-    [SerializeField] private float _jumpForce = 8.0f;
-    [SerializeField] private float _jump;
-    [SerializeField] private Transform _playerTransform;
-    [SerializeField] private GameObject _coinPrefab;
+    //[SerializeField] private float _jumpForce = 8.0f;
     [SerializeField] private Collider2D _collider;
     [SerializeField] private Rigidbody2D _rigidbody;
 
@@ -25,18 +21,19 @@ public class Player : MonoBehaviour
 
             _rigidbody.velocity = new Vector2(
                 _rigidbody.velocity.x,
-                _jump
+                8.0f
             );
         }
 
     }
-    /*private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     { 
         if (collision.gameObject.CompareTag("Ground"))
         {
             _isGrounded = true;
         }
-    }*/
+    }
 
 
 
