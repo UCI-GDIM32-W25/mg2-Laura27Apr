@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        _spawnInterval = Random.Range(0.5f, 1.5f);
+        _spawnInterval = Random.Range(0.2f, 1.5f);
         UpdateUI();
     }
 
@@ -26,18 +26,25 @@ public class GameController : MonoBehaviour
         {
             SpawnCoin();
             _spawnTimer = 0f;
-            _spawnInterval = Random.Range(0.5f, 1.5f);
+            _spawnInterval = Random.Range(0.2f, 1.5f);
         }
     }
 
     private void SpawnCoin()
     {
-        Instantiate(_coinPrefab, _spawnPoint.position, _coinPrefab.transform.rotation);
+        GameObject newCoin = Instantiate(_coinPrefab, _spawnPoint.position, _coinPrefab.transform.rotation);
+
+        Coin coinScript = newCoin.GetComponent<Coin>();
+
+        if (coinScript != null)
+        {
+            coinScript.gameController = this;
+        }
     }
 
    private void UpdateUI()
    {
-        _pointsText.text = "points: " + _points;
+        _pointsText.text = "Points: " + _points;
    }
 
     public void AddPoints(int amount)

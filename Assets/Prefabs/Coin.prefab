@@ -162,4 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _points: 1
-  _moveSpeed: 2.5
+  _moveSpeed: 3
+  gameController: {fileID: 0}

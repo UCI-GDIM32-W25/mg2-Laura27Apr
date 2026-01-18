@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
     [SerializeField] private int _points = 1;
     [SerializeField] private float _moveSpeed = 2.5f;
 
-    private GameController _gameController;
+    public GameController gameController;
 
     private void Update()
     {
@@ -15,11 +15,18 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
-            _gameController.AddPoints(_points);
+
+            if (gameController != null)
+            {
+                gameController.AddPoints(1);
+            }
+
             Destroy(gameObject);
         }
+
     }
 
 }
